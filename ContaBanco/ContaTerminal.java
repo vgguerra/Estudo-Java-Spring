@@ -6,6 +6,5 @@ public class ContaTerminal {
     public static void main(String[] args) {
         ContaTerminal ct = new ContaTerminal();
         int numeroConta = sc.nextInt();
-        ct.sc.
     }
 }
