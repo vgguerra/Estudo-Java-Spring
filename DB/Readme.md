@@ -3,10 +3,79 @@
 ## MER e DER
     O Modelo de Entidade-Relacionamento(MER) é representado através de diagramas chamados Diagrams Entidade-Relacionamento
 
-### Entidades
-    As entidades são nomeadas com substantivos concretos ou abstratos, que representem de forma clara sua função dentro do domínio
 
-    Devemos noa atentar para não deixa-las ambíguas, como por exemplo, uma entidade de "usuário" que dentro do mesmo seja guardado informações de reserva.
+Para especificar que uma determinada tabela está relacionada a outra, utilizamos `id{nome da tabela}` 
+
+        
+- Restrição de valores
+    - NOT NULL - Idicara que o campo é obrigatório
+    - UNIQUE - Indicara que o determinado valor é único
+    - DEFAULT - Indicara valores padrões para as colunas dentro da tabela
+- Chaves primárias e estrangeiras
+- Auto incremento
+
 
 ### Atributos
     São características ou propriedades das entidades. Eles descrevem informações específicas sobre uma entidade.
+
+    # Banco de dados relacionais
+
+
+### Criação da tabelas
+    Para a criação da tabela, utiliza-se o comando `CREATE TABLE {NOME DA TABELA}( {Atributo1,Atributo2...} )`
+
+    <a href="https://creately.com" style="color:#F69392">Site para modelagem de banco de dados¹</a><br>
+    Tem-se também um <a href="https://www.quickdatabasediagrams.com">site</a> que irá realizar a modelagem de banco de dados utilizando código apenas. 
+
+Para inserir dados em sua tabela, deve-se utilizar a sintaxe da seguinte forma:
+````bash
+INSERT INTO {nome_tabela}(valor1,valor2,valor2) VALUE(
+    "Equivalente valor1",
+    "Equivalente valor2",
+    "Equivalente valor3"
+);
+````
+
+## Imprimindo os valores da tabela
+
+1. Imprimindo todos
+
+````bash
+SELECT * FROM nome_tabela
+````
+>**OBSERVAÇÃO**: O "\*" serve para dizer que quermos todos os valores dentro da tabela
+
+2. Imprimindo especificamente
+````bash
+SELECT * FROM nome_tabela WHERE idade = 8; 
+````
+Neste caso, o mySQL irá retornar apenas os usuários que tem a **idade** igual a 8. 
+
+    Para verificar padrões, como por exemplo, mostrar todos que tem o primeiro nome "JOÃO" utiliza-se o LIKE
+<br>
+<br>
+
+## Deletando registros no MySQL
+
+Para deletar um registro em sua tabela, usamos o comando `DELETE`:
+````bash
+DELETE FROM _nome_table WHERE nome = value
+````
+>**CUIDADO** : Se o comando `DELETE` for utlizado sozinho, sem o `WHERE`, desta forma => `DELETE FROM _name_table` <= toda a sua tabela será apagado. 
+
+<br>
+<br>
+
+## Atulizando dados no banco de dados
+
+````bash
+UPDATE _name_table SET nome = "Novo nome" WHERE nome = "Nome antigo"
+````
+
+>**CUIDADO** : Assim como o `DELETE`, não use este comando sem o `WHERE`.
+
+<br>
+<br>
+
+## Apagando uma tabela
+    Para apagar uma tabela, basta utiliza o comando "DROP table {nome_tabela}".
