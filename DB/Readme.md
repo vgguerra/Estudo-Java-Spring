@@ -112,3 +112,6 @@ FOREIGN KEY (chave_estrangeira) REFERENCES{{outra_tabela}}(id)
 ````
   Restrições:
   <img src="./da.png">
+
+## Normalização de dados
+  A normalização de dados é um processo no qual se organiza e estrutura um banco de dados relacional de forma a eliminar redundâncias e anomalias, garantindo a consistência e integridade dos dados
