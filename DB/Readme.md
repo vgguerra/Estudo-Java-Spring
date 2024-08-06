@@ -79,3 +79,36 @@ UPDATE _name_table SET nome = "Novo nome" WHERE nome = "Nome antigo"
 
 ## Apagando uma tabela
     Para apagar uma tabela, basta utiliza o comando "DROP table {nome_tabela}".
+
+## Chaves primárias
+- Um atributo que identifica de forma excluisava cada registro de nossa tabela
+-  Impede a duplicação de registros
+- Não pode conter valores nulos
+- Uma tabela pode ter apenas uma chave primária
+
+Podemos criar uma tabela com um auto incremento utilizando o seguinte comando:
+````bash
+CREATE TABLE {{nome_tabela}}(ID PRIMARY KEY AUTOINCREMENT);
+````
+Ou caso você já tenha criado a tabela e queira adiconar uma primarykey a ela, utilize o seguinte comando:
+````bash
+ALTER TABLE{{nome_tabela}} MODIFY COLUMN ID INT PRIMARY KEY;
+````
+
+## Chaves Estrangeiras
+
+Uma `chave estrangeira` é usada para estabelecer uma relação entre duas  tabelas, mantendo a integridade dos dados entre tabelas relacionadas
+
+- Pode ser nula
+- Pode ter mais de uma ou nenhuma em uma tabela
+
+Para usa-la utiliza-se o seguinte comando:
+````bash
+CREATE TABLE {{nome_tabela}}(
+id INT PRIMARY KEY,
+chave_estrangeira INT,
+FOREIGN KEY (chave_estrangeira) REFERENCES{{outra_tabela}}(id)
+)
+````
+  Restrições:
+  <img src="./da.png">
